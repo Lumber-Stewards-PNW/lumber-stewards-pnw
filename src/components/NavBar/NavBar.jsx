@@ -9,13 +9,13 @@ export default function NavBar({ user, setUser }) {
     }
 
     return (
-        <nav>
+        <nav className='text-themeWhite p-4 bg-themeDarkGreen'>
             <Link to="/home">Home</Link>
             &nbsp; | &nbsp;
             <Link to="/lumber">Lumber</Link>
             &nbsp; | &nbsp;
             <Link to="/about">About Us</Link>
-            &nbsp;&nbsp; Welcome, {user.name}
+            &nbsp;&nbsp; Welcome, {user.name} |
             &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
         </nav>
     )
