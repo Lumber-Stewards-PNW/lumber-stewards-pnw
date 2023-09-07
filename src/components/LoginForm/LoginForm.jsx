@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service';
+import { Link } from 'react-router-dom'
+import SignUpForm from '../SignUpForm/SignUpForm';
 
 export default function LoginForm({ setUser }) {
   const [credentials, setCredentials] = useState({
@@ -28,15 +30,44 @@ export default function LoginForm({ setUser }) {
   }
 
   return (
-    <div>
-      <div className="form-container">
+    <div className="bg-themeDarkGreen min-h-screen flex justify-center items-center">
+      <div className="bg-white rounded-lg shadow-md p-8 w-full max-w-md">
+        <h1 className="text-3xl font-semibold mb-4">Log In</h1>
         <form autoComplete="off" onSubmit={handleSubmit}>
-          <input type="text" placeholder="Email" name="email" value={credentials.email} onChange={handleChange} required />
-          <input type="password" placeholder="Password" name="password" value={credentials.password} onChange={handleChange} required />
-          <button type="submit">LOG IN</button>
+          <div className="mb-4">
+            <input
+              type="text"
+              placeholder="Email"
+              name="email"
+              value={credentials.email}
+              onChange={handleChange}
+              required
+              className="w-full p-2 border rounded focus:outline-none focus:ring focus:border-themeDarkGreen"
+            />
+          </div>
+          <div className="mb-4">
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              value={credentials.password}
+              onChange={handleChange}
+              required
+              className="w-full p-2 border rounded focus:outline-none focus:ring focus:border-themeGreen"
+            />
+          </div>
+          <div className="text-center">
+            <button
+              type="submit"
+              className="bg-themeGreen text-white py-2 px-4 rounded hover:bg-themeGreenDark focus:outline-none focus:ring focus:bg-themeGreenDark"
+            >
+              LOG IN
+            </button>
+          </div>
         </form>
+        <h2 className='mt-3 bg-themeWhite'>New here? <Link to="/signup">Sign Up</Link></h2>
+        <p className="text-red-500 mt-2">{error}</p>
       </div>
-      <p className="error-message">&nbsp;{error}</p>
     </div>
   );
 }
