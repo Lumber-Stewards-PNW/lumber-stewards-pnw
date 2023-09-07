@@ -4,7 +4,7 @@ import { Routes, Route, Link } from 'react-router-dom'
 import { getUser } from '../../utilities/users-service'
 import AuthPage from '../AuthPage/AuthPage'
 import HomePage from '../HomePage/HomePage'
-import LumberPage from '../LumberPage/LumberPage'
+import ServicesPage from '../ServicesPage/ServicesPage'
 import AboutPage from '../AboutPage/AboutPage'
 import NavBar from '../../components/NavBar/NavBar'
 import SignUpPage from '../SignUpPage/SignUpPage';
@@ -20,7 +20,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/home" element={<HomePage />} />
-            <Route path="/lumber" element={<LumberPage />} />
+            <Route path="/services" element={<ServicesPage />} />
             <Route path="/about" element={<AboutPage />} />
           </Routes>
         </>
