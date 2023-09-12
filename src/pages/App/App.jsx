@@ -8,6 +8,7 @@ import ServicesPage from '../ServicesPage/ServicesPage'
 import AboutPage from '../AboutPage/AboutPage'
 import NavBar from '../../components/NavBar/NavBar'
 import SignUpPage from '../SignUpPage/SignUpPage';
+import Footer from '../../components/Footer/Footer';
 
 export default function App() {
   const user = getUser(); // Get the user object directly
@@ -23,6 +24,7 @@ export default function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/about" element={<AboutPage />} />
           </Routes>
+          <footer><Footer /></footer>
         </>
       ) : (
         <Routes>
